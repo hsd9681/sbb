@@ -16,6 +16,12 @@ class SbbApplicationTests {
 	@Autowired
 	private QuestionRepository questionRepository;
 
+	@Test
+	void testFindBySubjectAndContent() {
+		Question q = questionRepository.findBySubjectAndContent("sbb가 무엇인가요?", "sbb에 대해서 알고 싶습니다.");
+		assertEquals(q.getId(), 1);
+	}
+
 
 	@Test
 	void testFindBySubject() {
